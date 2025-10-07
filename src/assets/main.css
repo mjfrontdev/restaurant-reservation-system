@@ -1,0 +1,179 @@
+@import './base.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* فونت‌های فارسی */
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('./fonts/YekanBakh-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('./fonts/YekanBakh-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('./fonts/YekanBakh-ExtraBlack.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* متغیرهای CSS برای پالت رنگی */
+:root {
+  /* Light Theme */
+  --bg-primary: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --text-primary: #1E1E1E;
+  --text-secondary: #555555;
+  --brand-primary: #C0392B;
+  --accent-color: #F1C40F;
+  --btn-primary: #C0392B;
+  --btn-primary-hover: #A93226;
+  --success-color: #27AE60;
+  --error-color: #E74C3C;
+  --border-color: #E0E0E0;
+  --nav-bg: #F8F8F8;
+  --link-color: #E74C3C;
+  --input-bg: #F4F4F4;
+  --shadow: rgba(0,0,0,0.08);
+  --warning-color: #E67E22;
+  --cancel-color: #7F8C8D;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-card: #1E1E1E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --brand-primary: #E74C3C;
+  --accent-color: #F39C12;
+  --btn-primary: #E74C3C;
+  --btn-primary-hover: #C0392B;
+  --success-color: #2ECC71;
+  --error-color: #E74C3C;
+  --border-color: #2C2C2C;
+  --nav-bg: #181818;
+  --link-color: #FF6F61;
+  --input-bg: #2A2A2A;
+  --shadow: rgba(0,0,0,0.3);
+  --warning-color: #E67E22;
+  --cancel-color: #7F8C8D;
+}
+
+/* تنظیمات کلی */
+* {
+  font-family: 'YekanBakh', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  direction: rtl;
+  text-align: right;
+}
+
+#app {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+/* کلاس‌های کمکی */
+.text-brand {
+  color: var(--brand-primary) !important;
+}
+
+.bg-brand {
+  background-color: var(--brand-primary) !important;
+}
+
+.btn-brand {
+  background-color: var(--btn-primary);
+  border-color: var(--btn-primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-brand:hover {
+  background-color: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
+  color: white;
+}
+
+.card-custom {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow);
+  border-radius: 12px;
+}
+
+.input-custom {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.input-custom:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.25);
+  background-color: var(--bg-card);
+}
+
+.input-custom::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.input-custom:focus::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* انیمیشن‌ها */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
